@@ -1,4 +1,9 @@
+#include "Player.h"
+#include "character.h"
 
+void Player::equipWeapon(Item item)
+{
+}
 
 float Player::takeDamage(float damage)
 {

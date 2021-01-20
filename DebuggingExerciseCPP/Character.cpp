@@ -1,4 +1,5 @@
 #include "Character.h"
+#include "Player.h"
 
 Character::Character()
 {
@@ -22,6 +23,8 @@ float Character::takeDamage(float damage)
 	m_health -= totalDamage;
 	return damage;
 }
+
+
 
 float Character::attack(Character* other)
 {

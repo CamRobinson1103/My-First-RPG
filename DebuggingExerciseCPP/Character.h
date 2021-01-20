@@ -22,11 +22,11 @@ public:
 	/// <param name="other">The characterto deal damage to.</param>
 	/// <returns>The total damage dealt.</returns>
 	virtual float attack(Character* other);
-
-	virtual const char* getName() { return m_name; }
 	virtual float getHealth() { return m_health; }
 	virtual float getDamage() { return m_damage; }
 	virtual float getDefense() { return m_defense; }
+	virtual const char* getName() { return m_name; }
+	
 
 private:
 	const char* m_name = new char();

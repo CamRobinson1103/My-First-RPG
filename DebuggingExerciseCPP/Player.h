@@ -2,13 +2,12 @@
 #include "Item.h"
 #include "Character.h"
 
-class Player :
-     Character
+class Player : Character
 {
 public:
     Player() : Character() {}
     Player(const char* name, float health, float damage, float defense) :
-        Character(name, health, damage, defense);
+        Character(name, health, damage, defense) {};
 
     /// <summary>
     /// Adds the given item's stat boost to this player's total damage.
@@ -46,6 +45,7 @@ public:
     
     /// <returns>The player's base defense combined with the shield stat boost.</returns>
     virtual float getDefense() override;
+
 
 private:
     Item m_weapon;

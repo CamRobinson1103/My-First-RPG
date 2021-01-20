@@ -1,4 +1,7 @@
 #include "Player.h"
+#include "Character.h"
+#include "Enemy.h"
+#include "Item.h"
 #include <iostream>
 
 /// <summary>
@@ -51,6 +54,8 @@ void printCharacterStats(Character* character)
 	std::cout << "Defense: " << character->getDefense() << std::endl;
 }
 
+
+
 /// <summary>
 /// Begins a battle between the player and the given character. 
 /// Gets player input for decisions and loops until either the player or the character is dead.
@@ -63,7 +68,7 @@ void printCharacterStats(Character* character)
 /// 1- Player has won
 /// 2 - Player has escaped.
 /// </returns>
-int startPlayerBattle(Player* player, Character* enemy)
+int startPlayerBattle(Character* player, Character* enemy)
 {
 	//Loop while both the enemy and player are alive.
 	while (player->getHealth > 0 && enemy->getHealth > 0)
@@ -101,7 +106,7 @@ int main()
 	char* playerName = new char();
 	std::cin >> playerName;
 	//Initialize new player.
-	Player* player = new Player(playerName, 100, 10, 5);
+	Character* player = new Character(playerName, 100, 10, 5);
 
 	//Gets player weapon choice and equips the choosen weapon.
 	int choice = printOptions("Pick an Item: ", "Sword", "Shield");
@@ -111,7 +116,7 @@ int main()
 		player.equipShield(Item(10));
 
 	//Initialize new enemy.
-	Enemy* enemy = new Enemy("Monster", 50, 10, 5);
+	Character* enemy = new Character("Monster", 50, 10, 5);
 	
 	//Start battle with enemy and player and record the result.
 	int result = startPlayerBattle(player, enemy);

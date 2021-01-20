@@ -1,8 +1,7 @@
 #pragma once
 #include "Character.h"
 
-class Enemy :
-    public Character
+class Enemy : Character
 {
 public:
     Enemy() : Character() {}
